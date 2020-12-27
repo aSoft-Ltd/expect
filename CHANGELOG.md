@@ -1,11 +1,4 @@
-# 0.0.2 : 2020.12.20
-## paging-react
-- Migrated paging components to external interfaces and hooks implementation
-
-## Dependencies
-- Updated to kotlin 1.4.21 
-
-# 0.0.1 : 2020.12.04
+# 0.0.10 : 2020.12.27
 ## Availability
 - Published to maven central
 
