@@ -5,12 +5,11 @@ object vers {
 
     object asoft {
         val builders = "1.2.0"
-        val expect = "0.0.1"
+        val expect = "0.0.10"
         val either = "0.0.2"
     }
 
     object kotlinx {
-        val serialization = "1.0.1"
         val coroutines = "1.4.2"
     }
 }
