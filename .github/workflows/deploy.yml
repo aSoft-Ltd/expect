@@ -11,7 +11,7 @@ env:
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
 
 jobs:
-   deploy-project:
+  deploy-project:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
