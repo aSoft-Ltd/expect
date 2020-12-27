@@ -41,5 +41,5 @@ kotlin {
 
 aSoftOSSLibrary(
     version = vers.asoft.expect,
-    description = "A Platform agnostic paging library"
+    description = "A Minimal kotlin multiplatform assertion library"
 )

@@ -11,7 +11,7 @@ env:
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
 
 jobs:
-   deploy-project:
+  deploy-project:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,12 +29,12 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: publishing paging-core
-        run: ./gradlew :paging-core:publish
+      - name: publishing expect-core
+        run: ./gradlew :expect-core:publish
         working-directory: .
-      - name: publishing paging-react
-        run: ./gradlew :paging-react:publish
+      - name: publishing expect-coroutines
+        run: ./gradlew :expect-coroutines:publish
         working-directory: .
       - name: Closing and Releasing Repositories
-        run: ./gradlew :paging-react:closeAndReleaseRepository
+        run: ./gradlew :expect-core:closeAndReleaseRepository
         working-directory: .

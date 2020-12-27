@@ -21,5 +21,5 @@ kotlin {
 
 aSoftOSSLibrary(
     version = vers.asoft.expect,
-    description = "A Platform agnostic paging library"
+    description = "Extension of the expect-core library to add coroutines StateFlow support"
 )
