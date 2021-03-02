@@ -1,4 +1,7 @@
-import tz.co.asoft.*
+import expect.expect
+import expect.toBe
+import expect.toContain
+import expect.toHave
 import kotlin.test.Test
 
 class CollectionsApiTest {
