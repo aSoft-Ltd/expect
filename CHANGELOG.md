@@ -1,3 +1,8 @@
+# 0.0.20 : 2021.03.02
+- Bumped builders version from 1.2.0 to 1.3.0
+- Removed android targets as they will be using the jvm targets
+- Changed package name from tz.co.asoft to expect
+
 # 0.0.10 : 2020.12.27
 ## Availability
 - Published to maven central

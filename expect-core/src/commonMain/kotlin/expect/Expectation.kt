@@ -1,3 +1,3 @@
-package tz.co.asoft
+package expect
 
 open class Expectation<out T>(val value: T)
