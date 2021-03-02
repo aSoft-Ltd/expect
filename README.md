@@ -22,13 +22,13 @@ expect(2 + 2) {
 ## Setup: Gradle
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:expect-core:+") // use the latest version
+    implementation("tz.co.asoft:expect-core:0.0.20")
     // - - - - - or - - - - - 
-    implementation("tz.co.asoft:expect-coroutines:+") // for asserting StateFlow<T> easily
+    implementation("tz.co.asoft:expect-coroutines:0.0.20")
 }
 ```
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test/1.0.1?style=flat
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/expect-core/0.0.20?style=flat
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 [badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat
 [badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=flat

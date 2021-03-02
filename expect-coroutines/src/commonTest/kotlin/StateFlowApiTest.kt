@@ -1,8 +1,7 @@
 import kotlinx.coroutines.flow.MutableStateFlow
-import tz.co.asoft.expect
-import tz.co.asoft.toBe
-import tz.co.asoft.toBeNonNull
-import tz.co.asoft.toBeNull
+import expect.expect
+import expect.toBe
+import expect.toBeNonNull
 import kotlin.test.Test
 
 class StateFlowApiTest {

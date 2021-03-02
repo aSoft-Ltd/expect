@@ -1,4 +1,4 @@
-import tz.co.asoft.*
+import expect.*
 import kotlin.test.Test
 
 class ComparableApiTest {
