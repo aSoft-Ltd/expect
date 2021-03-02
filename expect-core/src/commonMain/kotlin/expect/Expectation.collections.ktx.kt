@@ -9,13 +9,26 @@ inline fun <E> expect(vararg elements: E) = expect(elements.toList())
 fun <E> Expectation<Collection<E>>.toContain(vararg elements: E) = assertTrue(
     """
     
-    Expected   : $elements to be inside the collection
+    Expected   : ${elements.joinToString(",", prefix = "[", postfix = "]") { it.toString() }} to be inside the collection
     Collection : [
         ${value.joinToString(separator = "\n        ") { it.toString() }}
     ]
     ===============================================
 """.trimIndent()
 ) { value.containsAll(elements.toList()) }
+
+fun <T> Expectation<Collection<T>>.toNotContain(vararg elements: T) {
+    assertTrue(
+        """
+    
+    Expected   : ${elements.joinToString(",", prefix = "[", postfix = "]") { it.toString() }} to not be inside the collection
+    Collection : [
+        ${value.joinToString(separator = "\n        ") { it.toString() }}
+    ]
+    ===============================================
+""".trimIndent()
+    ) { !value.containsAll(elements.toList()) }
+}
 
 fun <E> Expectation<Collection<E>>.toBeEmpty() = assertTrue(
     """
