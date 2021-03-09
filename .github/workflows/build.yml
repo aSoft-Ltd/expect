@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [ master-dev ]
 
+env:
+  MACHINE: mac
+
 jobs:
   build-project:
     runs-on: ubuntu-latest

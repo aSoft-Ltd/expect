@@ -1,4 +1,10 @@
-# 0.0.20 : 2021.03.02
+# 0.0.21 : 2021.02.09
+
+- Added native targets
+- Added dependencies to test
+
+# 0.0.20 : 2021.02.03
+
 - Bumped builders version from 1.2.0 to 1.3.0
 - Removed android targets as they will be using the jvm targets
 - Changed package name from tz.co.asoft to expect
@@ -6,17 +12,23 @@
 - Added toNotContain assertion
 
 # 0.0.10 : 2020.12.27
+
 ## Availability
+
 - Published to maven central
 
 ## Build Src
+
 - Updated to gradle version 6.7.1
 
 ## New Features
+
 - Initial release
 
 ## Documentation
+
 - Update readme
 
 ## Samples
+
 - Added samples
