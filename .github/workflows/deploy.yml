@@ -9,6 +9,7 @@ env:
   ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
   ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
+  MACHINE: mac
 
 jobs:
   deploy-project:
@@ -29,11 +30,8 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: publishing expect-core
-        run: ./gradlew :expect-core:publish
-        working-directory: .
-      - name: publishing expect-coroutines
-        run: ./gradlew :expect-coroutines:publish
+      - name: publishing
+        run: ./gradlew publish
         working-directory: .
       - name: Closing and Releasing Repositories
         run: ./gradlew :expect-core:closeAndReleaseRepository
