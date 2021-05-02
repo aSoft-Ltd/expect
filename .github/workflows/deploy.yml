@@ -9,7 +9,6 @@ env:
   ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
   ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
-  MACHINE: mac
 
 jobs:
   deploy-project:
@@ -27,6 +26,14 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Cache konan
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.konan/dependencies
+            ~/.konan/kotlin-native-macos*
+          key: ${{ runner.os }}-konan-
+          restore-keys: ${{ runner.os }}-konan-
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
