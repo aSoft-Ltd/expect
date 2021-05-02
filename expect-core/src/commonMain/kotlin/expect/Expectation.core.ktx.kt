@@ -4,6 +4,8 @@ import kotlin.test.*
 
 fun <T> expect(value: T) = Expectation(value)
 
+fun <T> expect(callback: () -> Unit) = Expectation(callback)
+
 inline fun <T> expect(value: T, builder: Expectation<T>.() -> Unit) = expect(value).apply(builder)
 
 inline fun <reified T> Expectation<*>.toBeInstanceOf() = assertTrue(
