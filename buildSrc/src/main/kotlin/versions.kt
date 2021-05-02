@@ -7,8 +7,4 @@ object vers {
         val test = "1.1.30"
         val expect = "0.0.30"
     }
-
-    object kotlinx {
-        val coroutines = "1.4.3"
-    }
 }
