@@ -1,7 +1,6 @@
 import expect.expect
+import expect.expectMany
 import expect.toBe
-import expect.toContain
-import expect.toHave
 import kotlin.test.Test
 
 class CollectionsApiTest {
@@ -17,7 +16,7 @@ class CollectionsApiTest {
 
     @Test
     fun can_check_length_of_multiple_things() {
-        expect(listOf(1, 2, 3, 4, 5)) {
+        expectMany(listOf(1, 2, 3, 4, 5)) {
             toContain(2, 3, 4)
             toHave(length = 5)
             toBe<List<*>>()
