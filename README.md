@@ -22,13 +22,13 @@ expect(2 + 2) {
 ## Setup: Gradle
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:expect-core:0.0.21")
+    implementation("tz.co.asoft:expect-core:0.0.30")
     // - - - - - or - - - - - 
-    implementation("tz.co.asoft:expect-coroutines:0.0.21")
+    implementation("tz.co.asoft:expect-coroutines:0.0.30")
 }
 ```
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/expect-core/0.0.21?style=flat
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/expect-core/0.0.30?style=flat
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 [badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat
 [badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=flat

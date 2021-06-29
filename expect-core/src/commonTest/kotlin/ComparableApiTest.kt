@@ -4,7 +4,7 @@ import kotlin.test.Test
 class ComparableApiTest {
     @Test
     fun should_have_a_killer_api() {
-        expect(1).toBe(1)
+        expect(1 + 1).toBe(2)
         expect(2 + 2) {
             toBeEqualTo(4)
             toBeLessThan(5)

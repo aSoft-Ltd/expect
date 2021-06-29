@@ -7,7 +7,13 @@ plugins {
 }
 
 kotlin {
-    jvm { library() }
+    jvm {
+        library()
+        withJava()
+        tasks.withType<Test> {
+            useJUnitPlatform()
+        }
+    }
     js(IR) { library() }
     val darwinTargets = listOf(
         macosX64(),
@@ -29,7 +35,32 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(asoft("test-core", vers.asoft.test))
+                api(kotlin("test"))
+            }
+        }
+
+        val jvmMain by getting {
+            dependencies {
+                api(kotlin("test-junit5"))
+            }
+        }
+
+        val jsAndNativeMain by creating {
+            dependencies {
+                dependsOn(commonMain)
+            }
+        }
+
+        val jsMain by getting {
+            dependencies {
+                dependsOn(jsAndNativeMain)
+            }
+        }
+
+        (darwinTargets + linuxTargets).forEach {
+            val main by it.compilations.getting {}
+            main.defaultSourceSet {
+                dependsOn(jsAndNativeMain)
             }
         }
     }

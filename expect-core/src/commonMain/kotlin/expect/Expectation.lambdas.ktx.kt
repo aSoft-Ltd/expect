@@ -2,20 +2,20 @@ package expect
 
 import kotlin.test.assertFails
 
-fun Expectation<() -> Unit>.toFail() {
-    var failed = false
+fun BasicExpectation<() -> Unit>.toFail(): Throwable {
+    var throwable: Throwable? = null
     try {
         value()
-    } catch (_: Throwable) {
-        failed = true
+    } catch (cause: Throwable) {
+        throwable = cause
     } finally {
-        if (failed) return
+        if (throwable != null) return throwable
         throw AssertionError("Expected lambda to fail, but did not")
     }
 }
 
 
-fun Expectation<() -> Unit>.toPass() {
+fun BasicExpectation<() -> Unit>.toPass() {
     var passed = false
     passed = try {
         value()
