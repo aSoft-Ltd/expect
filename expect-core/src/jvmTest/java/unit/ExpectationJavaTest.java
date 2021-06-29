@@ -22,6 +22,8 @@ public class ExpectationJavaTest {
 
     @Test
     public void should_fail() {
-        expect();
+        expect(() -> {
+            throw new RuntimeException("Not implemented");
+        }).toFail();
     }
 }

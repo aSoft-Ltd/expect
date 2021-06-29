@@ -5,6 +5,6 @@ object vers {
     object asoft {
         val builders = "1.3.30"
         val test = "1.1.32"
-        val expect = "0.0.31"
+        val expect = "0.0.40"
     }
 }

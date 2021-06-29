@@ -1,5 +1,5 @@
 package expect;
 
-interface Callback {
-    public void execute();
+public interface Callback {
+    void execute();
 }
