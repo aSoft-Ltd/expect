@@ -1,3 +1,9 @@
+# 0.0.40 : 2021.06.29
+
+- Upgraded kotlin from 1.5.10 to 1.5.20
+- Upgraded gradle from 6.8.1 to 7.0.2
+- Built for in Jaa16
+
 # 0.0.30 : 2021.05.02
 
 - Added kotlin 1.5.0 support
