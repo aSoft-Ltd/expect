@@ -30,13 +30,19 @@ expect(2 + 2) {
 
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:expect-core:0.0.40")
+    implementation("tz.co.asoft:expect-core:0.0.41")
     // - - - - - or - - - - - 
-    implementation("tz.co.asoft:expect-coroutines:0.0.40")
+    implementation("tz.co.asoft:expect-coroutines:0.0.41")
 }
 ```
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/expect-core/0.0.40?style=flat
+## Compatibility
+
+|Kotlin Version|Expect Version|
+|--------------|--------------|
+|1.5.10        | 0.0.41       |
+
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/expect-core/0.0.41?style=flat
 
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 

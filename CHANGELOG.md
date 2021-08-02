@@ -1,3 +1,7 @@
+# 0.0.41 : 2021.08.02
+- Reverted to kotlin 1.5.10
+- Updated builders to 1.3.42
+
 # 0.0.40 : 2021.06.29
 
 - Upgraded kotlin from 1.5.10 to 1.5.20
