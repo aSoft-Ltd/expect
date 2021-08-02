@@ -25,8 +25,8 @@ inline fun <E> expect(
 ): BasicExpectation<out E> = expect(value).apply(builder)
 
 @JsExport
-@JsName("expectLambda")
-fun expect(lambda: () -> Unit) = LambdaAssertion(lambda)
+@JsName("expectFunction")
+fun expectFunction(lambda: () -> Unit) = LambdaAssertion(lambda)
 
 inline fun <E> expectMany(
     value: Collection<E>,
