@@ -1,10 +1,10 @@
-import expect.expect
+import expect.expectFunction
 import kotlin.test.Test
 
 class LambdaTest {
     @Test
     fun should_fail() {
-        expect {
+        expectFunction {
             TODO()
         }.toFail()
     }

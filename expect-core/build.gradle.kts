@@ -8,40 +8,14 @@ plugins {
 
 kotlin {
     jvm {
-        library()
-        withJava()
-        tasks.withType<Test> {
-            useJUnitPlatform()
-        }
+        library(); withJava()
     }
     js(IR) { library() }
-    val darwinTargets = listOf(
-        macosX64(),
-        iosArm64(),
-        iosArm32(),
-        iosX64(),
-        watchosArm32(),
-        watchosArm64(),
-        watchosX86(),
-        tvosArm64(),
-        tvosX64()
-    )
-
-    val linuxTargets = listOf(
-        linuxArm64(),
-        linuxArm32Hfp(),
-        linuxX64()
-    )
+    val nativeTargets = nativeTargets(supportedByCoroutines = true)
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(kotlin("test"))
-            }
-        }
-
-        val jvmMain by getting {
-            dependencies {
-                api(kotlin("test-junit5"))
+                api(asoft("test-core", vers.asoft.test))
             }
         }
 
@@ -57,7 +31,7 @@ kotlin {
             }
         }
 
-        (darwinTargets + linuxTargets).forEach {
+        nativeTargets.forEach {
             val main by it.compilations.getting {}
             main.defaultSourceSet {
                 dependsOn(jsAndNativeMain)

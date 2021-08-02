@@ -1,6 +1,6 @@
-import kotlinx.coroutines.flow.MutableStateFlow
 import expect.expect
 import expect.expectState
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlin.test.Test
 
 class StateFlowApiTest {
