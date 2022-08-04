@@ -10,11 +10,15 @@ kotlin {
         library(); withJava()
     }
     js(IR) { library() }
-    val nativeTargets = nativeTargets(supportedByCoroutines = true)
+    val nativeTargets = nativeTargets(supportedByCoroutines = false)
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(projects.functions)
+                if (System.getenv("INCLUDE_BUILD") == "true") {
+                    api(asoft.functions.core)
+                } else {
+                    api(project(":functions-core"))
+                }
                 api(kotlin("test"))
             }
         }
