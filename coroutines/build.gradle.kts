@@ -21,6 +21,6 @@ kotlin {
 }
 
 aSoftOSSLibrary(
-    version = asoft.versions.foundation.get(),
+    version = asoft.versions.root.get(),
     description = "Extension of the expect-core library to add coroutines StateFlow support"
 )

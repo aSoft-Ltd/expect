@@ -51,6 +51,6 @@ kotlin {
 }
 
 aSoftOSSLibrary(
-    version = asoft.versions.foundation.get(),
+    version = asoft.versions.root.get(),
     description = "A Minimal kotlin multiplatform assertion library"
 )
