@@ -32,14 +32,10 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
 
 val tmp = 1
 
-rootProject.name = "expect"
+rootProject.name = "root"
 
 // dependencies
-if (System.getenv("INCLUDE_BUILD") == "true") {
-    includeBuild("../functions")
-} else {
-    includeSubs("functions", "../functions", "core")
-}
+includeSubs("functions", "../functions", "core")
 
 // submodules
 includeSubs("expect", ".", "core", "coroutines")
