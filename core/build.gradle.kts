@@ -9,7 +9,7 @@ kotlin {
     jvm {
         library(); withJava()
     }
-    js(IR) { library() }
+    js(IR) { library(testTimeout = null) }
 //    val nativeTargets = nativeTargets(true)
     val nativeTargets = linuxTargets(true)
     sourceSets {
@@ -49,6 +49,5 @@ kotlin {
 }
 
 aSoftOSSLibrary(
-    version = asoft.versions.root.get(),
-    description = "A Minimal kotlin multiplatform assertion library"
+    version = asoft.versions.root.get(), description = "A Minimal kotlin multiplatform assertion library"
 )
