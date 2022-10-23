@@ -9,7 +9,7 @@ kotlin {
     jvm {
         library(); withJava()
     }
-    js(IR) { library(testTimeout = null) }
+    js(IR) { library() }
 //    val nativeTargets = nativeTargets(true)
     val nativeTargets = linuxTargets(true)
     sourceSets {
