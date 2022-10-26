@@ -10,8 +10,8 @@ kotlin {
         library(); withJava()
     }
     js(IR) { library() }
-//    val nativeTargets = nativeTargets(true)
-    val nativeTargets = linuxTargets(true)
+    val nativeTargets = nativeTargets(true)
+//    val nativeTargets = linuxTargets(true)
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -49,5 +49,6 @@ kotlin {
 }
 
 aSoftOSSLibrary(
-    version = asoft.versions.root.get(), description = "A Minimal kotlin multiplatform assertion library"
+    version = asoft.versions.root.get(),
+    description = "A Minimal kotlin multiplatform assertion library"
 )
