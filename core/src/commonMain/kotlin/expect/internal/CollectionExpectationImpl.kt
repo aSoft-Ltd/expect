@@ -12,9 +12,9 @@ import kotlin.test.assertTrue
  */
 @PublishedApi
 internal class CollectionExpectationImpl<E>(
-    override val value: Collection<E>
-) : CollectionExpectation<E>, BasicExpectation<Collection<E>> by BasicExpectationImpl(value) {
-    override fun toContain(vararg elements: E) = assertTrue(
+    override val value: Collection<E>?
+) : CollectionExpectation<E>, BasicExpectation<Collection<E>?> by BasicExpectationImpl(value) {
+    override fun toContain(vararg elements: E?) = assertTrue(
         """
             
             Expected   : ${
@@ -25,13 +25,13 @@ internal class CollectionExpectationImpl<E>(
             ) { it.toString() }
         } to be inside the collection
             Collection : [
-                ${value.joinToString(separator = "\n        ") { it.toString() }}
+                ${value?.joinToString(separator = "\n        ") { it.toString() }}
             ]
             ===============================================
     """.trimIndent()
-    ) { value.containsAll(elements.toList()) }
+    ) { value?.containsAll(elements.toList()) == true }
 
-    override fun toNotContain(vararg elements: E) = assertTrue(
+    override fun toNotContain(vararg elements: E?) = assertTrue(
         """
     
         Expected   : ${
@@ -42,22 +42,22 @@ internal class CollectionExpectationImpl<E>(
             ) { it.toString() }
         } to not be inside the collection
         Collection : [
-            ${value.joinToString(separator = "\n        ") { it.toString() }}
+            ${value?.joinToString(separator = "\n        ") { it.toString() }}
         ]
         ===============================================
         """.trimIndent()
-    ) { !value.containsAll(elements.toList()) }
+    ) { value?.containsAll(elements.toList()) != true }
 
     override fun toBeEmpty() = assertTrue(
         """
     
     Expected   : Collection to be empty
     Collection : [
-        ${value.joinToString(separator = "\n        ") { it.toString() }}
+        ${value?.joinToString(separator = "\n        ") { it.toString() }}
     ]
     ===============================================
     """.trimIndent()
-    ) { value.isEmpty() }
+    ) { value?.isEmpty() == true }
 
     override fun toContainElements() = assertTrue(
         """
@@ -66,23 +66,23 @@ internal class CollectionExpectationImpl<E>(
     Collection : Collection was empty
     ===============================================
     """.trimIndent()
-    ) { value.isNotEmpty() }
+    ) { value?.isNotEmpty() == true }
 
     override fun toHave(length: Int) = assertTrue(
         """
     
     Expected : $length to be length of the collection
-    Actual   : ${value.size} is the length of the collection
+    Actual   : ${value?.size} is the length of the collection
     ===============================================
     """.trimIndent()
-    ) { value.size == length }
+    ) { value?.size == length }
 
     override fun toBeOfSize(size: Int) = assertTrue(
         """
     
     Expected : $size to be size of the collection
-    Actual   : ${value.size} is the size of the collection
+    Actual   : ${value?.size} is the size of the collection
     ===============================================
     """.trimIndent()
-    ) { value.size == size }
+    ) { value?.size == size }
 }

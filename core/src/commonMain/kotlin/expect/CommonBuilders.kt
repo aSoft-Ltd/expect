@@ -16,7 +16,7 @@ fun <E> expect(vararg value: E): CollectionExpectation<E> = CollectionExpectatio
 
 fun <E> expectArray(array: Array<E>) = expect(*array)
 
-fun <E> expectCollection(collection: Collection<E>): CollectionExpectation<E> = CollectionExpectationImpl(collection)
+fun <E> expectCollection(collection: Collection<E>?): CollectionExpectation<E> = CollectionExpectationImpl(collection)
 
 
 fun <E> expect(collection: Collection<E>) = expectCollection(collection)
