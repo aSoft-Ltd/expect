@@ -1,3 +1,7 @@
+# Unreleased
+## Changed
+`expect(collection: Collection<E>)` to `expect(collection: Collection<E>?)`
+
 # 0.0.42 : 2021.08.03
 
 - Resolved ambiguous jvm resolutions

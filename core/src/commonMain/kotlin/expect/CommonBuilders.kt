@@ -14,12 +14,11 @@ fun <E> expect(value: E): BasicExpectation<E> = BasicExpectationImpl(value)
 
 fun <E> expect(vararg value: E): CollectionExpectation<E> = CollectionExpectationImpl(value.asList())
 
-fun <E> expectArray(array: Array<E>) = expect(*array)
+fun <E> expectArray(array: Array<E>): CollectionExpectation<E> = CollectionExpectationImpl(array.asList())
 
 fun <E> expectCollection(collection: Collection<E>?): CollectionExpectation<E> = CollectionExpectationImpl(collection)
 
-
-fun <E> expect(collection: Collection<E>) = expectCollection(collection)
+fun <E> expect(collection: Collection<E>?): CollectionExpectation<E> = CollectionExpectationImpl(collection)
 
 inline fun <E> expect(
     value: E,
