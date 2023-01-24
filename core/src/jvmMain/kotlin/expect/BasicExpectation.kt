@@ -23,7 +23,7 @@ actual interface BasicExpectation<out E> {
 
     actual fun toBe(expected: @UnsafeVariance E)
 
-    fun toBeInstanceOf(clazz: Class<*>) {
+    fun toBeInstanceOf(clazz: Class<out Any?>) {
         assertTrue(
             """
 		

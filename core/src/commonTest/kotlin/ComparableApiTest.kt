@@ -12,7 +12,7 @@ class ComparableApiTest {
             toBeNonNull()
             toBe<Int>()
             toBe<Number>()
-            toBe<Comparable<*>>()
+            toBe<Comparable<Any?>>()
         }
     }
 }
